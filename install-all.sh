@@ -224,6 +224,7 @@ apk add networkmanager networkmanager-cli networkmanager-openrc network-manager-
 
 echo "=== 10. MENAMBAHKAN DAEMON SERVIS PERANGKAT KERAS (OPENRC) ==="
 apk add eudev dbus dbus-x11 eudev-openrc \
+        udisks2-openrc \
         acpid acpid-openrc \
         haveged haveged-openrc \
         irqbalance irqbalance-openrc \
@@ -247,6 +248,7 @@ rc-update add udev-settle sysinit || true
 rc-update add cgroups boot || true
 rc-update add dbus boot || true
 rc-update add elogind boot || true
+rc-update add udisks2 default || true
 
 # Penataan daemon kustom default level
 rc-update add acpid default || true
