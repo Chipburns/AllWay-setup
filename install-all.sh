@@ -28,7 +28,7 @@ apk add kanshi wlr-randr
 echo "=== 3.MEMASANG LABWC (WAYLAND) BESERTA UTILITAS PELENGKAP & AUDIO ==="
 # Memasang sesi desktop Wayland LXQt, Labwc, utilitas multimedia, gcompat, dan konsole
 apk add lxqt-wayland-session@testing labwc wlogout lximage-qt pavucontrol-qt obconf-qt gcompat konsole
-apk add brightnessctl xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-desktop-portal-kde upower
+apk add brightnessctl xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-desktop-portal-lxqt upower
 apk add swayidle swaylock-effects
 apk add lxqt-policykit featherpad@testing
 apk add kvantum kvantum-themes kvantum-qt5 kvantum-qt6
@@ -309,6 +309,24 @@ net.bridge.bridge-nf-call-iptables=0
 net.bridge.bridge-nf-call-ip6tables=0
 EOF
 sysctl -p /etc/sysctl.d/bridging.conf >/dev/null 2>&1 || true
+# ========================================================================
+
+# ========================================================================
+# [OPSIONAL] INTEGRASI PERANGKAT KERAS TAMBAHAN (HAPUS PAGAR UNTUK MENGAKTIFKAN)
+# ========================================================================
+echo "-> Memeriksa instalasi komponen opsional..."
+
+# --- MODUL A: EKOSISTEM PENCETAKAN & DOKUMEN (CUPS PRINTER) ---
+# Hapus tanda pagar (#) pada baris di bawah ini jika Anda memiliki printer fisik:
+# apk add cups cups-filters cups-openrc ghostscript poppler-utils system-config-printer
+# rc-update add cupsd default || true
+# echo "   [Sukses] Layanan printer CUPS telah diaktifkan."
+
+# --- MODUL B: OTOMATISASI HEMAT BATERAI LAPTOP (TLP) ---
+# Hapus tanda pagar (#) pada baris di bawah ini jika Anda memasang Alpine di Laptop:
+# apk add tlp tlp-openrc
+# rc-update add tlp default || true
+# echo "   [Sukses] Manajemen hemat daya TLP laptop telah diaktifkan."
 # ========================================================================
 
 echo "=== 12. PENYEMPURNAAN AUDIO MODERN PIPEWIRE ==="
