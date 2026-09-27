@@ -1,2 +1,2 @@
-# dalpin-setup
-Alpine-dek setup
+# Alpine Wayfire Setup Script by Chipburns
+
