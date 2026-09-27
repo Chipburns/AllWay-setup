@@ -1,2 +1,4 @@
-# Alpine Wayfire Setup Script by Chipburns
+# Alpine Wayfire Setup Script
+
+by Chipburns
 
